@@ -59,7 +59,7 @@
     if (!EMBED) { setTimeout(function(){ location.replace(PLATFORM); }, 700); setTimeout(function(){ document.getElementById('slow').style.display = 'block'; }, 6000); return; }
     frame.src = PLATFORM;
     var slow = setTimeout(function(){ document.getElementById('slow').style.display = 'block'; }, 15000);
-    frame.addEventListener('load', function(){ clearTimeout(slow); setTimeout(function(){ splash.classList.add('hide'); }, 600); });
+    frame.addEventListener('load', function(){ clearTimeout(slow); setTimeout(function(){ splash.classList.add('hide'); }, 5000); }); // Google's page draws the platform a few seconds after it loads
   }
   start();
   window.addEventListener('online', function(){ if (!frame.src) { document.getElementById('offline').style.display = 'none'; start(); } });
