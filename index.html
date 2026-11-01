@@ -53,7 +53,7 @@
   document.getElementById('direct').href = PLATFORM;
   // EMBED=false: the app opens the platform directly (works with the platform as it is).
   // EMBED=true needs the platform to allow being shown inside this app (a setting on the Google side).
-  var EMBED = false;
+  var EMBED = true;
   function start(){
     if (!navigator.onLine) { document.getElementById('offline').style.display = 'flex'; return; }
     if (!EMBED) { setTimeout(function(){ location.replace(PLATFORM); }, 700); setTimeout(function(){ document.getElementById('slow').style.display = 'block'; }, 6000); return; }
