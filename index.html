@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>مرصاد الصدارة</title>
+<meta name="description" content="منصة متابعة الطلاب – مدرسة الصدارة بنين، الحلقة الثانية">
+<meta name="theme-color" content="#05181E">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="مرصاد الصدارة">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+  :root{--night:#05181E;--gold:#E3B45C;--fg:#EAF3F1;--muted:#9CB7B6}
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;background:var(--night);color:var(--fg);font-family:"Segoe UI",Tahoma,Arial,sans-serif;overflow:hidden}
+  #frame{position:fixed;left:0;right:0;bottom:0;top:env(safe-area-inset-top,0px);width:100%;height:calc(100% - env(safe-area-inset-top,0px));border:0;background:#F2F5F4}
+  #splash{position:fixed;inset:0;z-index:5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:radial-gradient(circle at 50% 40%,#0E3A40 0,var(--night) 70%);transition:opacity .5s}
+  #splash.hide{opacity:0;pointer-events:none}
+  #splash img{width:120px;height:120px;border-radius:50%;background:#fff;box-shadow:0 0 0 6px rgba(227,180,92,.25),0 0 0 14px rgba(227,180,92,.08)}
+  #splash h1{margin:0;font-size:1.7rem;color:var(--gold);font-weight:700}
+  #splash p{margin:0;color:var(--muted);font-size:.95rem}
+  .ring{width:34px;height:34px;border-radius:50%;border:3px solid rgba(227,180,92,.25);border-top-color:var(--gold);animation:spin 1s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  #slow{display:none;text-align:center;max-width:300px;line-height:1.7}
+  #slow a{color:var(--gold)}
+  #offline{display:none;position:fixed;inset:0;z-index:6;background:var(--night);flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:24px}
+  #offline button{background:var(--gold);color:#1b1405;border:0;border-radius:10px;padding:10px 22px;font-size:1rem;font-weight:700;cursor:pointer}
+  @media (prefers-reduced-motion:reduce){.ring{animation:none}#splash{transition:none}}
+</style>
+</head>
+<body>
+<div id="splash" role="status" aria-live="polite">
+  <img src="icon-192.png" alt="شعار مدرسة الصدارة">
+  <h1>مرصاد الصدارة</h1>
+  <p>مدرسة الصدارة بنين – الحلقة الثانية</p>
+  <div class="ring" aria-hidden="true"></div>
+  <p id="slow">التحميل يأخذ وقتًا أطول من المعتاد.<br><a id="direct" href="#" >اضغط هنا لفتح المنصة</a></p>
+</div>
+<div id="offline" role="alert">
+  <img src="icon-192.png" alt="" width="90" height="90" style="border-radius:50%;background:#fff">
+  <p>لا يوجد اتصال بالإنترنت.<br>تحقق من الاتصال ثم أعد المحاولة.</p>
+  <button type="button" onclick="location.reload()">إعادة المحاولة</button>
+</div>
+<iframe id="frame" title="مرصاد الصدارة" allow="clipboard-write" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<script>
+  // The platform itself stays on Google Apps Script; this app only shows it full screen.
+  var PLATFORM = "https://script.google.com/macros/s/AKfycbwzRzRiI8HNIu5bt9qxQFxTOB4O1WUTcaksEJPaLSec4kxJ1QbL-CbN9kk82g71YE15/exec";
+  var frame = document.getElementById('frame'), splash = document.getElementById('splash');
+  document.getElementById('direct').href = PLATFORM;
+  // EMBED=false: the app opens the platform directly (works with the platform as it is).
+  // EMBED=true needs the platform to allow being shown inside this app (a setting on the Google side).
+  var EMBED = false;
+  function start(){
+    if (!navigator.onLine) { document.getElementById('offline').style.display = 'flex'; return; }
+    if (!EMBED) { setTimeout(function(){ location.replace(PLATFORM); }, 700); setTimeout(function(){ document.getElementById('slow').style.display = 'block'; }, 6000); return; }
+    frame.src = PLATFORM;
+    var slow = setTimeout(function(){ document.getElementById('slow').style.display = 'block'; }, 15000);
+    frame.addEventListener('load', function(){ clearTimeout(slow); setTimeout(function(){ splash.classList.add('hide'); }, 600); });
+  }
+  start();
+  window.addEventListener('online', function(){ if (!frame.src) { document.getElementById('offline').style.display = 'none'; start(); } });
+  if ('serviceWorker' in navigator) window.addEventListener('load', function(){ navigator.serviceWorker.register('sw.js').catch(function(){}); });
+</script>
+</body>
+</html>
