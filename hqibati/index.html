@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>حقيبتي الرقمية | My Digital Bag</title>
+<meta name="theme-color" content="#0b1030"><meta name="description" content="حقيبتي الرقمية – مدرسة الصدارة بنين"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preload" as="image" href="hero.webp" fetchpriority="high"><link rel="preconnect" href="https://script.google.com"><link rel="preconnect" href="https://script.googleusercontent.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300..700&display=swap" media="print" onload="this.media='all'">
+<style>
+:root{--bg:#0b1030;--card:#ffffff14;--b:#ffffff2b;--tx:#fff;--mut:#c3ccff;--gold:#ffc107;--g:#00a651;--r:#e5322d;--f:"Readex Pro","Segoe UI",Tahoma,"Noto Sans Arabic",system-ui,sans-serif}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--f);font-feature-settings:"kern";line-height:1.65;background:#0b1030 radial-gradient(circle at 20% 0,#1d2a6b,#0b1030 60%) fixed;color:var(--tx);min-height:100vh;padding-top:env(safe-area-inset-top);-webkit-font-smoothing:antialiased}
+.wrap{max-width:980px;margin:auto;padding:14px}
+.bar{display:flex;gap:8px;justify-content:space-between;flex-wrap:wrap;margin-bottom:10px}
+button,select,input,textarea{font:inherit}
+.btn{border:1px solid var(--b);background:var(--card);color:var(--tx);padding:9px 16px;border-radius:14px;cursor:pointer;font-weight:600;text-decoration:none;display:inline-block;line-height:1.4}
+.btn:hover{filter:brightness(1.25)}.btn:active{transform:scale(.97)}.btn[disabled]{opacity:.55;pointer-events:none}
+.pri{background:linear-gradient(135deg,#00b894,#00cec9);border:0}.red{background:linear-gradient(135deg,#e5493d,#c0392b);border:0}.gold{background:linear-gradient(135deg,#ffd54f,#ffb300);color:#222;border:0}
+.card{background:var(--card);border:1px solid var(--b);border-radius:20px;padding:16px;margin:12px 0}
+h1,h2,h3{margin:.3em 0;line-height:1.3;font-weight:700}.gt{color:var(--gold);text-shadow:0 0 18px #ffc10766}.mut{color:var(--mut)}
+.hero{text-align:center}
+.tag{position:absolute;top:-10px;inset-inline-start:-10px;background:var(--g);padding:3px 12px;border-radius:12px;font-weight:600;font-size:13px;z-index:2}
+.tag2{position:absolute;bottom:-10px;inset-inline-end:-10px;background:var(--gold);color:#222;padding:3px 12px;border-radius:12px;font-weight:600;font-size:13px;z-index:2}
+.spark{position:fixed;pointer-events:none;font-size:18px;animation:up linear infinite;opacity:.6;will-change:transform;z-index:0}
+@keyframes fl{50%{transform:translateY(-10px)}}
+@keyframes up{from{transform:translateY(105vh)}to{transform:translateY(-10vh)}}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.tile{border-radius:20px;padding:18px;text-align:center;cursor:pointer;border:1px solid var(--b);transition:transform .2s;font-weight:600}
+.tile:hover{transform:translateY(-4px) scale(1.02)}.tile .ic{font-size:44px;line-height:1.3}
+label{display:block;margin:10px 0 4px;color:var(--mut);font-weight:600;font-size:14px}
+input,select,textarea{width:100%;padding:11px;border-radius:12px;border:1px solid var(--b);background:#0d1a4acc;color:#fff}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--gold);outline-offset:1px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:10px;border-radius:14px;background:#ffffff0d;margin:6px 0}
+.row a{color:var(--gold)}.done{border:1px solid #2ecc71}.err{color:#ff8a80;font-weight:600;margin:6px 0}.off{opacity:.55}
+.toast{position:fixed;inset:auto 0 24px;margin:auto;width:max-content;max-width:90vw;background:#ffc107;color:#222;padding:14px 22px;border-radius:18px;font-weight:700;box-shadow:0 10px 30px #0008;z-index:99;animation:tin .25s ease-out}
+@keyframes tin{from{opacity:0;transform:translateY(12px)}}
+.cert{background:#fffdf3;color:#2b2b2b;border:10px double #b8860b;border-radius:10px;text-align:center;padding:28px;margin:12px 0}
+.bars div{display:flex;align-items:center;gap:8px;margin:4px 0}.bars i{display:block;height:14px;background:linear-gradient(90deg,#00cec9,#ffc107);border-radius:8px}
+table{width:100%;border-collapse:collapse;font-size:13px}td,th{padding:6px;border-bottom:1px solid var(--b);text-align:start}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}.tabs .on{background:var(--gold);color:#222}
+.badge{display:inline-block;font-size:11px;padding:1px 8px;border-radius:9px;background:#ffffff22;margin-inline-start:6px}
+.code{font-family:ui-monospace,Consolas,monospace;font-size:clamp(22px,6vw,34px);letter-spacing:2px;background:#000a;border:2px dashed var(--gold);color:var(--gold);padding:10px 16px;border-radius:14px;display:inline-block;direction:ltr}
+.load{display:inline-block;width:14px;height:14px;border:2px solid #fff6;border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle}
+@media print{body *{visibility:hidden}.cert,.cert *{visibility:visible}.cert{position:absolute;inset:0;margin:0}}
+.stage{position:relative;width:min(360px,80vw);aspect-ratio:1;margin:46px auto 30px;perspective:900px;animation:fl 6s ease-in-out infinite;cursor:pointer;touch-action:manipulation}
+.ring{position:absolute;pointer-events:none}.r1{inset:-16%;border:3px dashed #1fd3c5bb;border-radius:26%;animation:spin 20s linear infinite}
+.r2{inset:-7%;border:3px solid #ffc10799;border-radius:22%;animation:spin 30s linear infinite reverse}.r3{inset:-26%;border:2px dotted #ffffff44;border-radius:50%;animation:spin 40s linear infinite}
+.orb{position:absolute;inset:-11%;pointer-events:none;animation:spin 7s linear infinite}.orb:before{content:"";position:absolute;top:-6px;left:50%;width:14px;height:14px;border-radius:50%;background:#ffc107;box-shadow:0 0 16px 4px #ffc107}
+.orb.o2{inset:-20%;animation-duration:11s;animation-direction:reverse}.orb.o2:before{background:#00e676;box-shadow:0 0 16px 4px #00e676}
+.frame{position:absolute;inset:0;border-radius:14px;padding:9px;background:linear-gradient(135deg,#00a651 0 30%,#fff 30% 50%,#e5322d 50% 75%,#111 75%);box-shadow:0 0 50px #00a65177,0 20px 40px #0009;transition:transform .15s ease-out;transform-style:preserve-3d}
+.frame img{width:100%;height:100%;object-fit:cover;border-radius:8px;display:block;background:#1d2a6b}
+.st{position:absolute;color:#ffc107;font-size:26px;animation:tw 2s ease-in-out infinite;pointer-events:none}.s1{top:-30px;left:8%}.s2{bottom:-34px;right:6%;animation-delay:.7s}
+.pill{display:inline-block;background:linear-gradient(135deg,#e5493d,#c0392b);padding:8px 26px;border-radius:30px;font-weight:700;box-shadow:0 6px 20px #0008}
+.bp{position:fixed;pointer-events:none;font-size:20px;z-index:9;animation:bp .9s ease-out forwards}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes tw{50%{transform:scale(1.6) rotate(45deg);opacity:.5}}@keyframes bp{to{transform:translate(var(--dx),var(--dy)) scale(.4);opacity:0}}
+@media (prefers-reduced-motion:reduce){*,*:before{animation:none!important;transition:none!important}.spark{display:none}}
+</style></head><body><div class="wrap" id="app"></div>
+<script>
+const API="https:\/\/script.google.com\/macros\/s\/AKfycbzHeOopqcZ7IjqYYlWKHG-CrmaNPcy_DCTUQPELsv_-tdk-xuPecvdWw5LaB_9PxSQhDQ\/exec";
+const BOOT=(()=>{try{return JSON.parse(localStorage.getItem("hboot")||"null")}catch(e){return null}})();
+const IMG="hero.webp";
+const SUBJ=[["ar","اللغة العربية","Arabic","📖","#d6453d"],["isl","التربية الإسلامية","Islamic Education","🕌","#27ae60"],["soc","الدراسات الاجتماعية","Social Studies","🌍","#2980b9"],["sci","العلوم (Science)","Science","🔬","#0e8fa6"],["math","الرياضيات (Math)","Math","🔢","#d4730c"],["en","اللغة الإنجليزية","English","🇬🇧","#7c3aed"]];
+const SEM=[["1","الفصل الدراسي الأول","Term 1","#3b82c4"],["2","الفصل الدراسي الثاني","Term 2","#27ae60"],["3","الفصل الدراسي الثالث","Term 3","#e67e22"]];
+const PTYPES=[["revision","ملف مراجعة","Revision file"],["worksheet","ورقة عمل","Worksheet"],["exam","اختبار","Test"],["other","أخرى","Other"]];
+const TX={
+title:["حقيبتي الرقمية","My Digital Bag"],year:["العام الدراسي 2026-2027","Academic Year 2026-2027"],sub:["اختبارات تحاكي هيكل الاختبارات الوزارية","Tests that simulate the ministerial exam structure"],
+team:["فريق العمل","Project Team"],gates:["اختر البوابة","Choose a gate"],g1:["الطالب وولي الأمر","Student & Parent"],g2:["المعلم","Teacher"],g3:["المعلم المسؤول عن المنصة","Platform Lead Teacher"],g4:["إدارة المدرسة","School Administration"],g5:["المعلم الشريك","Partner Teacher"],
+start:["ابدأ رحلتك التعليمية","Start your learning journey"],sname:["اسم الطالب","Student name"],school:["المدرسة","School"],other:["أخرى","Other"],oname:["اكتب اسم مدرستك","Type your school name"],grade:["الصف","Grade"],sec:["الشعبة","Section"],go:["ابدأ رحلتي","Start my journey"],
+bad:["اكتب اسماً صحيحاً بحروف مفهومة فقط (بدون أرقام أو رموز أو تكرار حروف).","Please type a real name using letters only (no digits, symbols or repeated letters)."],
+pickSem:["اختر الفصل الدراسي","Choose the term"],pickSub:["اختر المادة","Choose the subject"],exams:["الاختبارات الإلكترونية","Online tests"],files:["بنوك الاختبارات والمراجعة (PDF)","Test banks & revision (PDF)"],
+open:["فتح الاختبار","Open test"],mark:["أنجزت الاختبار","I finished it"],dl:["تحميل","Download"],back:["رجوع","Back"],out:["خروج","Exit"],none:["لا توجد عناصر بعد","Nothing here yet"],
+medal:["🏅 وسام التميز والشكر! أحسنت","🏅 Medal of Excellence! Well done"],getc:["🎓 احصل على شهادة الشكر والتقدير","🎓 Get your certificate"],print:["طباعة","Print"],
+pw:["كلمة المرور","Password"],enter:["دخول","Enter"],wrong:["كلمة المرور غير صحيحة","Wrong password"],add:["إضافة","Add"],del:["حذف","Delete"],ttl:["العنوان","Title"],url:["الرابط (https:\/\/...)","Link (https:\/\/...)"],
+addE:["إضافة اختبار إلكتروني","Add an online test"],addF:["إضافة ملف PDF (برابط)","Add a PDF (by link)"],
+tabC:["المحتوى","Content"],tabS:["إعدادات المنصة","Settings"],tabA:["التحليلات","Analytics"],tabL:["السجل","Activity log"],tabT:["الطلاب","Students"],tabP:["المعلمون الشركاء","Partner teachers"],save:["حفظ","Save"],
+cert1:["شهادة شكر وتقدير","Certificate of Appreciation"],cert2:["تتقدم مدرسة {s} بالشكر والتقدير للطالب","{s} thanks and appreciates the student"],cert3:["لإنجازه جميع اختبارات مادة","for completing all tests of"],
+k1:["الطلاب","Students"],k2:["اختبارات منجزة","Tests completed"],k3:["اختبارات","Tests"],k4:["ملفات","Files"],k5:["مصادر الشركاء","Partner resources"],bySch:["حسب المدرسة","By school"],byGr:["حسب الصف","By grade"],bySub:["الإنجاز حسب المادة","Completions by subject"],
+sNameAr:["اسم المدرسة (عربي)","School name (Arabic)"],sNameEn:["اسم المدرسة (إنجليزي)","School name (English)"],teamL:["فريق العمل (سطر لكل اسم)","Team (one per line)"],
+exp:["تصدير CSV","Export CSV"],pickT:["المادة","Subject"]};
+const DEF={sar:"مدرسة الصدارة بنين",sen:"Al Sadara Boys School",stage:["للتعليم الأساسي – الحلقة الثانية","Basic Education – Cycle 2"],yr:["العام الدراسي 2026-2027","Academic Year 2026-2027"],mo:["بيدٍ واحدة نصنع التميز، وبالإصرار نحقق النجاح","Together we create excellence, with determination we achieve success"],grades:"5,6,7,8",secs:"1,2,3,4,5,6,7,8",
+team:"محمد خليل|معلم اللغة العربية|Mohamed Khalil|Arabic Teacher\nصالحة البلوشي|رئيسة هيئة تدريس المواد العربية|Salha Al Balushi|Head of Arabic Subjects\nطلال النعيمي|مساعد مدير|Talal Al Nuaimi|Assistant Principal\nمريم النيادي|مديرة المدرسة|Maryam Al Neyadi|School Principal\nعائشة الغفلي|مديرة نطاق 2.8|Aisha Al Ghafli|Zone 2.8 Director"};
+
+/* ---------- تخزين محلي آمن ---------- */
+const LS={get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}},del(k){try{localStorage.removeItem(k)}catch(e){}}};
+let V={lang:LS.get("hl2","ar"),view:"home",role:null,token:null,tsubj:null,tab:"c",f:{subj:"ar",grade:"5",sem:"1"},st:LS.get("hst",null),sem:null,subj:null,err:"",other:false,ed:null,cf:null,tname:"",partner:null,pcode:null,busy:false,pf:{type:"revision",g:"",s:"ar",m:"1"}};
+const B=(BOOT&&typeof BOOT==="object")?BOOT:{};
+let D={exams:B.exams||[],files:B.files||[],cfg:B.cfg||[],teachers:B.teachers||[],partnerResources:B.partnerResources||[],students:[],logs:[],done:V.st?LS.get("hdone",[]):[],partners:[]};
+const t=k=>TX[k][V.lang=="ar"?0:1],ar=()=>V.lang=="ar",L=(a,e)=>V.lang=="ar"?a:e,esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const C=()=>Object.assign({},DEF,D.cfg[0]||{});
+const sname=()=>ar()?C().sar:C().sen,sj=k=>SUBJ.find(s=>s[0]==k)||SUBJ[0],sjn=k=>sj(k)[ar()?1:2];
+const grades=()=>String(C().grades).split(",").map(x=>x.trim()).filter(Boolean);
+const pType=k=>{const p=PTYPES.find(x=>x[0]==k)||PTYPES[3];return ar()?p[1]:p[2]};
+const $=id=>document.getElementById(id);
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+
+/* ---------- الاتصال بالخادم ---------- */
+function callServer(fn,...args){
+  return fetch(API,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({fn,args})})
+    .then(r=>r.json()).then(r=>{if(!r||!r.ok)throw new Error((r&&r.error)||"error");return r.v});
+}
+function loadBoot(){
+  return fetch(API+"?api=boot").then(r=>r.json()).then(b=>{if(!b||typeof b!=="object")return;
+    const staff=V.role&&V.role!="s";["exams","files","cfg","teachers","partnerResources"].forEach(k=>{if(Array.isArray(b[k])&&(!staff||k=="cfg"))D[k]=b[k]});
+    try{localStorage.setItem("hboot",JSON.stringify(b))}catch(e){}soft()}).catch(e=>console.error(e));
+}
+const errMsg=e=>String((e&&e.message)||e||"").replace(/^(Exception|Error):\s*/,"");
+const typing=()=>/input|select|textarea/i.test((document.activeElement||{}).tagName||"");
+function soft(){if(!typing())render()}
+function setRows(c,rows){if(Array.isArray(rows)){D[c]=rows;if(c=="done"&&V.st)LS.set("hdone",rows)}}
+
+/* تحديث فوري للواجهة ثم المزامنة مع الخادم في الخلفية */
+const store={
+  put(c,id,o){
+    id=String(id);const rec=Object.assign({},o,{id});const i=D[c].findIndex(x=>String(x.id)===id);
+    if(i>=0)D[c][i]=rec;else D[c].push(rec);
+    if(c=="done"&&V.st)LS.set("hdone",D.done);
+    soft();
+    return callServer("apiPut",c,id,o,V.token||"").then(r=>{if(r&&r.rows){setRows(c,r.rows);soft()}return r})
+      .catch(e=>{console.error(e);toast(errMsg(e)||L("تعذر حفظ البيانات. تحقق من الاتصال.","Could not save. Check your connection."));});
+  },
+  rm(c,id){
+    id=String(id);D[c]=D[c].filter(x=>String(x.id)!==id);soft();
+    return callServer("apiRm",c,id,V.token||"").then(r=>{if(r&&r.rows){setRows(c,r.rows);soft()}})
+      .catch(e=>{console.error(e);toast(L("تعذر الحذف.","Could not delete."));});
+  }
+};
+function log(type,who,detail){if(!V.token||V.role=="a")return;callServer("apiPut","logs",uid(),{t:Date.now(),type,who,detail},V.token).catch(()=>{})}
+
+/* ---------- التشغيل: الصفحة تظهر فوراً بالبيانات المحقونة ---------- */
+function init(){
+  render();
+  loadBoot();
+  if(V.st&&V.st.id){
+    callServer("apiStudentBoot",V.st.id,LS.get("htok","")).then(r=>{V.token=r.token;LS.set("htok",r.token);setRows("done",r.done);soft()})
+      .catch(e=>{console.error(e);if(/لم يتم العثور/.test(errMsg(e))){V.st=null;LS.del("hst");LS.del("hdone");LS.del("htok");soft()}});
+  }
+}
+const okName=(s,min)=>{s=s.trim().replace(/\s+/g," ");return s.length>=min&&s.length<=60&&/^[\p{L}\p{M}\s'’.\-]+$/u.test(s)&&!/(.)\1{3,}/u.test(s)&&s.replace(/[\s'’.\-]/g,"").length>=min};
+const hash=s=>{let h=0;for(const c of s)h=(h*31+c.charCodeAt(0))|0;return"s"+(h>>>0).toString(36)};
+function go(o){const hasErr=Object.prototype.hasOwnProperty.call(o||{},"err");Object.assign(V,o||{});if(!hasErr)V.err="";render();scrollTo(0,0)}
+function logout(){V.st=null;V.role=null;V.token=null;V.partner=null;V.pcode=null;LS.del("hst");LS.del("hdone");LS.del("htok");D.done=[];go({view:"home"})}
+function hdr(back){return`<div class="bar"><div>${back?`<button class="btn" onclick="${back}">${ar()?"→":"←"} ${t("back")}</button>`:""}</div><div style="display:flex;gap:8px"><button class="btn" onclick="V.lang=ar()?'en':'ar';LS.set('hl2',V.lang);render()">🌐 ${ar()?"English":"العربية"}</button>${V.st||V.role?`<button class="btn" onclick="logout()">${t("out")}</button>`:""}</div></div>`}
+const VIEWS={};
+function render(){document.documentElement.lang=V.lang;document.documentElement.dir=ar()?"rtl":"ltr";const v=V.view;$("app").innerHTML=(VIEWS[v]||VIEWS.home)();if(v=="home")tilt()}
+function tilt(){const s=$("stage"),f=$("frame");if(!s)return;
+s.onpointermove=e=>{const r=s.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;f.style.transform=`rotateY(${x*22}deg) rotateX(${-y*22}deg) scale(1.04)`};s.onpointerleave=()=>{f.style.transform=""};
+s.onclick=e=>{for(let i=0;i<14;i++){const b=document.createElement("span"),a=Math.random()*6.28,d=60+Math.random()*90;b.className="bp";b.textContent=["✨","⭐","🎉","🇦🇪","🎊"][i%5];b.style.cssText=`left:${e.clientX}px;top:${e.clientY}px;--dx:${Math.cos(a)*d}px;--dy:${Math.sin(a)*d}px`;document.body.appendChild(b);setTimeout(()=>b.remove(),950)}}}
+function sparks(){if(matchMedia("(prefers-reduced-motion:reduce)").matches)return;for(let i=0;i<7;i++){const s=document.createElement("div");s.className="spark";s.textContent=["✨","⭐","🎉"][i%3];s.style.cssText=`left:${i*14+Math.random()*8}%;animation-duration:${10+Math.random()*9}s;animation-delay:-${Math.random()*9}s`;document.body.appendChild(s)}}
+
+/* ============================ الرئيسية ============================ */
+VIEWS.home=function(){const c=C();const tm=String(c.team).split("\n").map(l=>l.split("|")).filter(p=>p[0]);return hdr()+`<div class="hero"><div class="stage" id="stage"><i class="ring r3"></i><i class="ring r1"></i><i class="ring r2"></i><i class="orb"></i><i class="orb o2"></i><div class="frame" id="frame"><span class="tag">⭐ ${ar()?"لغتنا هويتنا":"Our language, our identity"}</span><img src="${IMG}" alt="فخورون بالإمارات" width="520" height="478" decoding="async" fetchpriority="high"><span class="tag2">🏆 ${ar()?"تميّز وإبداع":"Excellence"}</span></div><b class="st s1">✦</b><b class="st s2">✦</b></div><div class="pill">🇦🇪 ${ar()?"فخورون بالإمارات":"Proud of the UAE"}</div>
+<div class="gt" style="font-weight:600;margin-top:10px">✦ ${esc(c.yr[ar()?0:1])} ✦</div><h1 class="gt" style="font-size:clamp(36px,9vw,64px);font-weight:700">${t("title")}</h1><h2>${esc(sname())}</h2><div class="mut">${esc(c.stage[ar()?0:1])}</div>
+<div style="margin:12px"><span class="btn red">⭐ ${t("sub")}</span></div><div class="card gt" style="font-weight:600;border-color:#0aa">★ ${esc(c.mo[ar()?0:1])} ★</div></div>
+<h2 style="text-align:center">${t("gates")}</h2><div class="grid">
+<div class="tile" style="background:linear-gradient(135deg,#00a651,#0b7a45)" onclick="go({view:V.st?'sems':'reg'})"><div class="ic">🎒</div>${t("g1")}${V.st?`<div style="font-size:13px;opacity:.9">⭐ ${esc(V.st.n)}</div>`:""}</div>
+<div class="tile" style="background:linear-gradient(135deg,#3b82c4,#1f5a91)" onclick="go({view:'login',role:'t'})"><div class="ic">👩‍🏫</div>${t("g2")}</div>
+<div class="tile" style="background:linear-gradient(135deg,#16a085,#0e6655)" onclick="go({view:V.partner?'ppanel':'pgate'})"><div class="ic">🤝</div>${t("g5")}</div>
+<div class="tile" style="background:linear-gradient(135deg,#e67e22,#b85c0a)" onclick="go({view:'login',role:'l'})"><div class="ic">🛠️</div>${t("g3")}</div>
+<div class="tile" style="background:linear-gradient(135deg,#8e44ad,#5e2d79)" onclick="go({view:'login',role:'a'})"><div class="ic">🏫</div>${t("g4")}</div></div>
+<div class="card" style="text-align:center"><h3>${t("team")}</h3>${tm.map(p=>`<div><b>${esc(ar()?p[0]:p[2]||p[0])}</b> <span class="mut">— ${esc(ar()?p[1]:p[3]||p[1])}</span></div>`).join("")}</div>
+<div class="mut" style="text-align:center;font-size:12px">☁️ ${L("البيانات محفوظة بصورة مشتركة عبر المنصة","Data is shared across the platform")}</div>`};
+
+/* ============================ الطالب ============================ */
+VIEWS.reg=function(){const c=C(),gs=grades(),ss=String(c.secs).split(",").map(x=>x.trim()).filter(Boolean);
+return hdr("go({view:'home'})")+`<div class="card"><h2>🚀 ${t("start")}</h2>
+<label>1️⃣ ${t("sname")}</label><input id="rn" maxlength="60" autocomplete="off" value="${esc(V.rn||"")}">
+<label>2️⃣ ${t("school")}</label><select id="rs" onchange="V.rn=$('rn').value;go({other:this.value=='o',view:'reg'})"><option value="m">🏫 ${esc(sname())}</option><option value="o" ${V.other?"selected":""}>${t("other")}</option></select>
+${V.other?`<label>${t("oname")}</label><input id="ro" maxlength="60" autocomplete="off">`:""}
+<div class="grid"><div><label>3️⃣ ${t("grade")}</label><select id="rg">${gs.map(g=>`<option>${esc(g)}</option>`).join("")}</select></div><div><label>4️⃣ ${t("sec")}</label><select id="rc">${ss.map(g=>`<option>${esc(g)}</option>`).join("")}</select></div></div>
+${V.err?`<div class="err">${V.err}</div>`:""}<button class="btn pri" id="regb" style="width:100%;margin-top:14px" onclick="doReg()">🚀 ${t("go")}</button></div>`};
+async function doReg(){const n=$("rn").value.trim().replace(/\s+/g," "),o=V.other,sc=o?($("ro").value.trim().replace(/\s+/g," ")):sname();
+if(!okName(n,2)||(o&&!okName(sc,3)))return go({view:"reg",err:t("bad"),rn:n});
+const s={n,sc,g:$("rg").value,c:$("rc").value,ts:Date.now()};s.id=hash([n,sc,s.g,s.c].join("|").toLowerCase());
+const b=$("regb");b.disabled=true;b.innerHTML=`<span class="load"></span>`;
+try{const r=await callServer("apiStudentRegister",s);V.token=r.token;LS.set("htok",r.token);V.st=s;LS.set("hst",s);setRows("done",r.done||[]);V.rn="";go({view:"sems"});}
+catch(e){console.error(e);go({view:"reg",err:L("تعذر حفظ بيانات الطالب. حاول مرة أخرى.","Could not save student details. Please try again."),rn:n});}}
+VIEWS.sems=function(){if(!V.st)return VIEWS.reg();return hdr("go({view:'home'})")+`<h2 class="gt" style="text-align:center">${t("pickSem")}</h2><div class="mut" style="text-align:center">⭐ ${esc(V.st.n)} · ${t("grade")} ${esc(V.st.g)}/${esc(V.st.c)}</div><div class="grid" style="margin-top:12px">${SEM.map(s=>`<div class="tile" style="background:${s[3]}" onclick="go({view:'subs',sem:'${s[0]}'})"><div class="ic">📘</div>${ar()?s[1]:s[2]}</div>`).join("")}</div>`};
+VIEWS.subs=function(){if(!V.st)return VIEWS.reg();return hdr("go({view:'sems'})")+`<h2 class="gt" style="text-align:center">${t("pickSub")}</h2><div class="grid" style="margin-top:12px">${SUBJ.map(s=>{const e=ex(s[0]),d=e.filter(x=>isDone(x.id)).length;return`<div class="tile" style="background:${s[4]}" onclick="go({view:'subj',subj:'${s[0]}'})"><div class="ic">${s[3]}</div>${ar()?s[1]:s[2]}<div style="font-size:13px;opacity:.85">${d} / ${e.length}</div></div>`}).join("")}</div>`};
+const ex=k=>D.exams.filter(x=>x.s==k&&x.g==V.st.g&&x.m==V.sem),fl=k=>D.files.filter(x=>x.s==k&&x.g==V.st.g&&x.m==V.sem);
+const pr=k=>D.partnerResources.filter(x=>x.active!==false&&x.s==k&&String(x.g)==String(V.st.g)&&String(x.m)==String(V.sem));
+const isDone=id=>D.done.some(d=>d.id==V.st.id+"_"+id);
+const safe=u=>/^(https?:\/\/|\/_blob\/)/i.test(u||"")?esc(u):"#";
+const semName=()=>{const s=SEM.find(s=>s[0]==V.sem)||SEM[0];return ar()?s[1]:s[2]};
+VIEWS.subj=function(){if(!V.st)return VIEWS.reg();const k=V.subj,e=ex(k),f=fl(k),p=pr(k),all=e.length&&e.every(x=>isDone(x.id));
+return hdr("go({view:'subs'})")+`<div class="card"><h2>${sj(k)[3]} ${sjn(k)}</h2><div class="mut">${t("grade")} ${esc(V.st.g)} · ${semName()}</div></div>
+${all?`<button class="btn gold" style="width:100%" onclick="cert()">${t("getc")}</button><div id="cert"></div>`:""}
+<div class="card"><h3>📝 ${t("exams")}</h3>${e.map(x=>`<div class="row ${isDone(x.id)?"done":""}"><b>${isDone(x.id)?"🏅 ":""}${esc(x.ti)}</b><span><a class="btn" target="_blank" rel="noopener" href="${safe(x.u)}" onclick="openIt('e','${esc(x.id)}')">🔗 ${t("open")}</a> ${isDone(x.id)?"":`<button class="btn pri" onclick="finish('${esc(x.id)}')">✔ ${t("mark")}</button>`}</span></div>`).join("")||`<div class="mut">${t("none")}</div>`}</div>
+<div class="card"><h3>📥 ${t("files")}</h3>${f.map(x=>`<div class="row"><b>📄 ${esc(x.ti)}</b><a class="btn" target="_blank" rel="noopener" href="${safe(x.u)}" onclick="openIt('f','${esc(x.id)}')">⬇ ${t("dl")}</a></div>`).join("")||`<div class="mut">${t("none")}</div>`}</div>
+${p.length?`<div class="card"><h3>🤝 ${L("مصادر ومشاركات المعلمين الشركاء","Partner teachers' resources")}</h3>${p.map(x=>`<div class="row"><span><b>${esc(x.ti)}</b><div class="mut" style="font-size:12px">${esc(pType(x.type))}${x.partnerName?" · "+esc(x.partnerName):""}</div></span><a class="btn" href="${safe(x.u)}" target="_blank" rel="noopener">🔗 ${L("فتح / تحميل","Open / Download")}</a></div>`).join("")}</div>`:""}`};
+function openIt(k,id){const x=(k=="e"?D.exams:D.files).find(y=>y.id==id);if(x)log(k=="e"?"open":"download",V.st.n,x.ti)}
+function finish(id){const x=D.exams.find(e=>e.id==id);if(!x)return;store.put("done",V.st.id+"_"+id,{s:x.s,sid:V.st.id,e:id,ts:Date.now(),g:V.st.g,sc:V.st.sc});log("done",V.st.n,x.ti);toast(t("medal"));
+const e=ex(V.subj);if(e.every(y=>y.id==id||isDone(y.id)))setTimeout(()=>{toast("🎓 "+t("getc"))},2600)}
+function toast(m){const d=document.createElement("div");d.className="toast";d.textContent=m;document.body.appendChild(d);setTimeout(()=>d.remove(),3200)}
+function cert(){$("cert").innerHTML=`<div class="cert"><div style="font-size:50px">🏆</div><h1 style="color:#b8860b">${t("cert1")}</h1><p>${t("cert2").replace("{s}",esc(V.st.sc))}</p><h2>${esc(V.st.n)}</h2><p>${t("cert3")} <b>${sjn(V.subj)}</b></p><p>${t("title")} · ${esc(C().yr[ar()?0:1])}</p></div><button class="btn pri" onclick="print()">🖨️ ${t("print")}</button>`}
+
+/* ============================ دخول الطاقم ============================ */
+VIEWS.login=function(){return hdr("go({view:'home'})")+`<div class="card" style="max-width:420px;margin:auto"><h2>🔐 ${t(V.role=="t"?"g2":V.role=="l"?"g3":"g4")}</h2>
+${V.role=="t"?(D.teachers.length?`<label>${L("اسم المعلم","Teacher")}</label><select id="tsb">${D.teachers.map(x=>`<option value="${esc(x.id)}">${esc(x.n)} — ${sjn(x.s)}</option>`).join("")}</select>`:`<div class="err">${L("لم تتم إضافة معلمين بعد. اطلب من المعلم المسؤول إضافتك.","No teachers yet. Ask the lead teacher to add you.")}</div>`):""}
+<label>${t("pw")}</label><div style="display:flex;gap:6px"><input id="pwd" type="password" onkeydown="if(event.key=='Enter')doLogin()" style="flex:1"><button type="button" class="btn" id="togglePwd" onclick="togglePassword()">👁️</button></div>
+${V.err?`<div class="err">${V.err}</div>`:""}<button class="btn pri" id="lgb" style="width:100%;margin-top:12px" onclick="doLogin()">${t("enter")}</button></div>`};
+function togglePassword(){const p=$("pwd"),b=$("togglePwd");if(!p||!b)return;const show=p.type==="password";p.type=show?"text":"password";b.textContent=show?"🙈":"👁️"}
+async function doLogin(){
+  const p=$("pwd").value,teacherId=V.role=="t"?($("tsb")||{}).value:"";
+  if(!p)return;
+  const b=$("lgb");b.disabled=true;b.innerHTML=`<span class="load"></span>`;
+  try{
+    const r=await callServer("apiAuth",V.role,teacherId,p);
+    if(!r||!r.ok)return go({view:"login",err:t("wrong")});
+    V.token=r.token;
+    if(V.role=="t"){const x=r.teacher||D.teachers.find(y=>y.id==teacherId)||{};V.tsubj=x.s;V.tname=x.n;V.f.subj=x.s}
+    Object.keys(r.data||{}).forEach(c=>setRows(c,r.data[c]));
+    V.tab=V.role=="a"?"a":"c";
+    log("staff",V.tname||V.role,V.tsubj||"");
+    go({view:"panel"});
+  }catch(e){console.error(e);go({view:"login",err:L("تعذر الاتصال بقاعدة البيانات. أعد المحاولة.","Could not connect to the database. Try again.")});}
+}
+
+/* ============================ لوحات الطاقم ============================ */
+VIEWS.panel=function(){const r=V.role;if(!r||!V.token)return VIEWS.home();const F=V.f,subjs=r=="t"?[V.tsubj]:SUBJ.map(s=>s[0]);if(r=="t")F.subj=V.tsubj;const c=C();
+if(!grades().includes(F.grade))F.grade=grades()[0]||"";
+const tabs=r=="t"?[["c",t("tabC")]]:r=="l"?[["c",t("tabC")],["m",L("المعلمون","Teachers")],["p",t("tabP")],["s",t("tabS")],["a",t("tabA")],["l",t("tabL")],["t",t("tabT")]]:[["a",t("tabA")],["l",t("tabL")],["t",t("tabT")]];
+let b="";
+if(V.tab=="c"){const E=D.exams.filter(x=>x.s==F.subj&&x.g==F.grade&&x.m==F.sem),Fi=D.files.filter(x=>x.s==F.subj&&x.g==F.grade&&x.m==F.sem);
+const it=(k,x)=>V.ed==k+x.id?`<div class="row"><input id="ei" value="${esc(x.ti)}"><input id="eu2" dir="ltr" placeholder="${L("رابط جديد (اتركه فارغاً للإبقاء على الحالي)","New link (leave empty to keep)")}"><button class="btn pri" onclick="saveEd('${k}','${esc(x.id)}')">${t("save")}</button><button class="btn" onclick="go({ed:null})">✕</button></div>`:`<div class="row"><span>${k=="e"?"📝":"📄"} ${esc(x.ti)} <a href="${safe(x.u)}" target="_blank" rel="noopener">🔗</a></span><span><button class="btn" onclick="go({ed:'${k}${esc(x.id)}'})">✏️ ${L("تعديل","Edit")}</button> <button class="btn red" onclick="rmIt('${k}','${esc(x.id)}')">${V.cf==k+x.id?L("تأكيد الحذف؟","Confirm?"):"🗑 "+t("del")}</button></span></div>`;
+b=tcard()+`<div class="card"><div class="grid"><div><label>${t("pickT")}</label><select ${r=="t"?"disabled":""} onchange="V.f.subj=this.value;render()">${subjs.map(k=>`<option value="${k}" ${k==F.subj?"selected":""}>${sjn(k)}</option>`).join("")}</select></div>
+<div><label>${t("grade")}</label><select onchange="V.f.grade=this.value;render()">${grades().map(g=>`<option ${g==F.grade?"selected":""}>${esc(g)}</option>`).join("")}</select></div>
+<div><label>${ar()?"الفصل":"Term"}</label><select onchange="V.f.sem=this.value;render()">${SEM.map(s=>`<option value="${s[0]}" ${s[0]==F.sem?"selected":""}>${ar()?s[1]:s[2]}</option>`).join("")}</select></div></div></div>
+<div class="card"><h3>➕ ${t("addE")}</h3><input id="et" placeholder="${t("ttl")}"><br><br><input id="eu" dir="ltr" placeholder="${t("url")}"><button class="btn pri" style="margin-top:8px" onclick="addIt('e')">${t("add")}</button>${V.err?`<div class="err">${V.err}</div>`:""}<div>${E.map(x=>it("e",x)).join("")}</div></div>
+<div class="card"><h3>➕ ${t("addF")}</h3><div class="mut" style="font-size:13px">${L("ارفع الملف على Google Drive واجعل الوصول «أي شخص لديه الرابط»، ثم الصق الرابط هنا ليتمكن أولياء الأمور من فتحه.","Upload the file to Google Drive, set access to “Anyone with the link”, then paste the link here so parents can open it.")}</div><input id="ft" placeholder="${t("ttl")}"><br><br><input id="fu" dir="ltr" placeholder="${t("url")}"><button class="btn pri" style="margin-top:8px" onclick="addIt('f')">${t("add")}</button><div>${Fi.map(x=>it("f",x)).join("")}</div></div>`}
+if(V.tab=="s")b=`<div class="card"><h3>🎓 ${L("الصفوف الدراسية","Grades")}</h3><div style="display:flex;gap:6px;flex-wrap:wrap">${grades().map(g=>`<span class="btn">${esc(g)} <b onclick="ask('g${esc(g)}',()=>rmG('${esc(g)}'))" style="cursor:pointer;color:#ff8a80">${V.cf=="g"+g?L("تأكيد؟","Sure?"):"✕"}</b></span>`).join("")}</div><div class="row"><input id="ng" maxlength="20" placeholder="${L("صف جديد (مثال: 9)","New grade (e.g. 9)")}" style="flex:1"><button class="btn pri" onclick="addG()">➕ ${t("add")}</button></div></div>
+<div class="card"><label>${t("sNameAr")}</label><input id="c1" value="${esc(c.sar)}"><label>${t("sNameEn")}</label><input id="c2" value="${esc(c.sen)}"><label>${L("الشعب (مفصولة بفاصلة)","Sections (comma-separated)")}</label><input id="c5" value="${esc(c.secs)}"><div class="grid"><div><label>${L("المرحلة (عربي)","Stage (Arabic)")}</label><input id="c6" value="${esc(c.stage[0])}"></div><div><label>${L("المرحلة (إنجليزي)","Stage (English)")}</label><input id="c7" value="${esc(c.stage[1])}"></div><div><label>${L("العام الدراسي (عربي)","Year (Arabic)")}</label><input id="c8" value="${esc(c.yr[0])}"></div><div><label>${L("العام الدراسي (إنجليزي)","Year (English)")}</label><input id="c9" value="${esc(c.yr[1])}"></div><div><label>${L("العبارة التحفيزية (عربي)","Motto (Arabic)")}</label><input id="c10" value="${esc(c.mo[0])}"></div><div><label>${L("العبارة التحفيزية (إنجليزي)","Motto (English)")}</label><input id="c11" value="${esc(c.mo[1])}"></div></div><label>${t("teamL")} (ar|role|en|role)</label><textarea id="c4" rows="6">${esc(c.team)}</textarea><label>${L("تغيير كلمة مرور المعلم المسؤول (اتركها فارغة دون تغيير)","Change lead teacher password (leave blank to keep current)")}</label><input id="p2" type="password" placeholder="${L("كلمة مرور جديدة","New password")}"><label>${L("تغيير كلمة مرور إدارة المدرسة (اتركها فارغة دون تغيير)","Change school admin password (leave blank to keep current)")}</label><input id="p3" type="password" placeholder="${L("كلمة مرور جديدة","New password")}"><button class="btn pri" style="margin-top:10px" onclick="saveCfg()">${t("save")}</button></div>`;
+if(V.tab=="a")b=stats();
+if(V.tab=="l")b=`<div class="card" style="overflow:auto">${r=="l"?`<button class="btn red" onclick="ask('logs',clearLogs)">${V.cf=="logs"?L("تأكيد؟","Sure?"):"🗑 "+L("مسح السجل","Clear log")}</button>`:""}<table>${D.logs.slice().sort((a,b)=>b.t-a.t).slice(0,150).map(l=>`<tr><td>${new Date(l.t).toLocaleString(ar()?"ar-AE":"en-GB")}</td><td>${esc(l.type)}</td><td>${esc(l.who)}</td><td>${esc(l.detail)}</td></tr>`).join("")||`<tr><td class="mut">${t("none")}</td></tr>`}</table></div>`;
+if(V.tab=="t")b=`<div class="card" style="overflow:auto"><button class="btn" onclick="csv()">⬇ ${t("exp")}</button> <span class="mut">${D.students.length} ${t("k1")}</span><table>${D.students.map(s=>V.ed=="s"+s.id?`<tr><td><input id="e1" value="${esc(s.n)}"></td><td><input id="e2" value="${esc(s.sc)}"></td><td><input id="e3" value="${esc(s.g)}"></td><td><input id="e4" value="${esc(s.c)}"></td><td><button class="btn pri" onclick="saveS('${esc(s.id)}')">${t("save")}</button> <button class="btn" onclick="go({ed:null})">✕</button></td></tr>`:`<tr><td>${esc(s.n)}</td><td>${esc(s.sc)}</td><td>${esc(s.g)}/${esc(s.c)}</td>${r=="l"?`<td><button class="btn" onclick="go({ed:'s${esc(s.id)}'})">✏️</button> <button class="btn red" onclick="ask('s${esc(s.id)}',()=>delS('${esc(s.id)}'))">${V.cf=="s"+s.id?L("تأكيد؟","Sure?"):"🗑"}</button></td>`:""}</tr>`).join("")}</table></div>`;
+if(V.tab=="m")b=`<div class="card"><h3>➕ ${L("إضافة معلم","Add a teacher")}</h3><div class="grid"><input id="tn" placeholder="${L("اسم المعلم","Teacher name")}"><select id="ts">${SUBJ.map(s=>`<option value="${s[0]}">${ar()?s[1]:s[2]}</option>`).join("")}</select><input id="tp" placeholder="${t("pw")}"></div><button class="btn pri" style="margin-top:8px" onclick="addT()">${t("add")}</button>${V.err?`<div class="err">${V.err}</div>`:""}</div><div class="card">${D.teachers.map(x=>V.ed=="t"+x.id?`<div class="row"><input id="t1" value="${esc(x.n)}"><select id="t2">${SUBJ.map(s=>`<option value="${s[0]}" ${s[0]==x.s?"selected":""}>${ar()?s[1]:s[2]}</option>`).join("")}</select><input id="t3" type="password" placeholder="${L("كلمة مرور جديدة (اختياري)","New password (optional)")}"><button class="btn pri" onclick="saveT('${esc(x.id)}')">${t("save")}</button><button class="btn" onclick="go({ed:null})">✕</button></div>`:`<div class="row"><span>👩‍🏫 <b>${esc(x.n)}</b> — ${sjn(x.s)}</span><span><button class="btn" onclick="go({ed:'t${esc(x.id)}'})">✏️ ${L("تعديل","Edit")}</button> <button class="btn red" onclick="ask('t${esc(x.id)}',()=>{store.rm('teachers','${esc(x.id)}')})">${V.cf=="t"+x.id?L("تأكيد الحذف؟","Confirm?"):"🗑 "+t("del")}</button></span></div>`).join("")||`<div class="mut">${t("none")}</div>`}</div>`;
+if(V.tab=="p")b=leadPartners();
+return hdr("go({view:'home'})")+`<h2 class="gt">${t(r=="t"?"g2":r=="l"?"g3":"g4")}${V.tname?` · ${esc(V.tname)}`:""}</h2><div class="tabs">${tabs.map(x=>`<button class="btn ${V.tab==x[0]?"on":""}" onclick="go({tab:'${x[0]}',ed:null,cf:null})">${x[1]}</button>`).join("")}</div>${b}`};
+function addIt(k){const ti=$(k+"t").value.trim(),u=$(k+"u").value.trim(),F=V.f;if(!ti||!/^https?:\/\/\S+$/i.test(u))return go({err:L("أدخل عنواناً ورابطاً صحيحاً يبدأ بـ https:\/\/","Enter a title and a valid https:\/\/ link")});
+V.err="";store.put(k=="e"?"exams":"files",uid(),{s:F.subj,g:F.grade,m:F.sem,ti,u});log("add",V.tname||V.role,ti);toast("✔ "+L("تمت الإضافة","Added"))}
+function ask(key,fn){if(V.cf!=key){V.cf=key;return render()}V.cf=null;fn();render()}
+function rmIt(k,id){ask(k+id,()=>{const c=k=="e"?"exams":"files",x=D[c].find(y=>y.id==id);store.rm(c,id);log("delete",V.tname||V.role,x?x.ti:"")})}
+function saveEd(k,id){const c=k=="e"?"exams":"files",x=D[c].find(y=>y.id==id),ti=$("ei").value.trim(),u=$("eu2").value.trim();if(!x||!ti||(u&&!/^https?:\/\/\S+$/i.test(u)))return toast(L("بيانات غير صحيحة","Invalid data"));V.ed=null;store.put(c,id,{...x,ti,u:u||x.u});log("edit",V.tname||V.role,ti);render()}
+function tcard(){if(V.role!="t")return"";const e=D.exams.filter(x=>x.s==V.tsubj).length,f=D.files.filter(x=>x.s==V.tsubj).length,ok=e>0&&f>0;
+return`<div class="card"><div>📝 ${t("exams")}: <b>${e}</b> · 📄 ${L("ملفات المراجعة","Revision files")}: <b>${f}</b></div>${ok?`<button class="btn gold" style="margin-top:8px" onclick="go({tc:!V.tc})">🎓 ${L("شهادة شكر وتقدير للمعلم","Teacher appreciation certificate")}</button>`:`<div class="mut" style="margin-top:6px">${L("أضف اختباراً وملف مراجعة واحداً على الأقل لتحصل على شهادة الشكر","Add at least one test and one revision file to earn your certificate")}</div>`}
+${ok&&V.tc?`<div class="cert"><div style="font-size:50px">🏆</div><h1 style="color:#b8860b">${t("cert1")}</h1><p>${L("تتقدم "+esc(sname())+" بجزيل الشكر والتقدير للمعلم/ة","“"+esc(sname())+"” extends sincere thanks and appreciation to teacher")}</p><h2>${esc(V.tname)}</h2><p>${L("لجهوده المتميزة في إثراء «حقيبتي الرقمية» بـ "+e+" اختباراً إلكترونياً و"+f+" ملف مراجعة في مادة ","for enriching “My Digital Bag” with "+e+" online tests and "+f+" revision files in ")}<b>${sjn(V.tsubj)}</b></p><p>${esc(C().yr[ar()?0:1])}</p></div><button class="btn pri" onclick="print()">🖨️ ${t("print")}</button>`:""}</div>`}
+function addT(){const n=$("tn").value.trim(),p=$("tp").value.trim();if(!okName(n,2)||p.length<6)return go({err:L("اكتب اسماً صحيحاً وكلمة مرور من 6 أحرف على الأقل","Valid name and a password of 6+ characters")});store.put("teachers",uid(),{n,s:$("ts").value,pw:p});log("add-teacher","l",n);go({err:""})}
+function saveT(id){const n=$("t1").value.trim(),p=$("t3").value.trim();if(!okName(n,2)||(p&&p.length<6))return toast(L("تحقق من الاسم وكلمة المرور (6 أحرف على الأقل)","Check the name and password (6+ characters)"));const o={...D.teachers.find(x=>x.id==id),n,s:$("t2").value};if(p)o.pw=p;V.ed=null;store.put("teachers",id,o);log("edit-teacher","l",n);render()}
+function saveS(id){const s=D.students.find(x=>x.id==id),n=$("e1").value.trim(),sc=$("e2").value.trim(),g=$("e3").value.trim(),c=$("e4").value.trim();if(!okName(n,2)||!okName(sc,3)||!g||!c)return toast(L("بيانات غير صحيحة","Invalid data"));V.ed=null;store.put("students",id,{...s,n,sc,g,c});log("edit-student","l",n);render()}
+function delS(id){D.students=D.students.filter(s=>s.id!=id);D.done=D.done.filter(d=>d.sid!=id);render();callServer("apiDeleteStudent",id,V.token).then(r=>{setRows("students",r.students);setRows("done",r.done);soft()}).catch(e=>toast(errMsg(e)));log("delete-student","l",id)}
+function clearLogs(){D.logs=[];callServer("apiClearLogs",V.token).catch(e=>toast(errMsg(e)))}
+const putCfg=o=>store.put("cfg","main",{...(D.cfg[0]||{}),...o});
+async function saveCfg(){
+  const v=i=>$(i).value;
+  putCfg({sar:v("c1"),sen:v("c2"),secs:v("c5"),stage:[v("c6"),v("c7")],yr:[v("c8"),v("c9")],mo:[v("c10"),v("c11")],team:v("c4")});
+  try{if(v("p2").trim())await callServer("apiSetPassword",V.token,"l",v("p2").trim());if(v("p3").trim())await callServer("apiSetPassword",V.token,"a",v("p3").trim());toast("✔ "+L("تم الحفظ","Saved"));}
+  catch(e){console.error(e);toast(L("تم حفظ الإعدادات، لكن تعذر تغيير كلمة المرور.","Settings saved, but password change failed."));}
+}
+function addG(){const g=$("ng").value.trim(),a=grades();if(!/^[\p{L}\p{N} ]{1,20}$/u.test(g)||a.includes(g))return toast(L("اسم صف غير صالح أو مكرر","Invalid or duplicate grade"));putCfg({grades:a.concat(g).join(",")});log("add-grade","l",g)}
+function rmG(g){const a=grades().filter(x=>x!=g);if(!a.length)return toast(L("يجب بقاء صف واحد على الأقل","Keep at least one grade"));putCfg({grades:a.join(",")});log("delete-grade","l",g)}
+function cnt(a,f){const m={};a.forEach(x=>{const k=f(x);m[k]=(m[k]||0)+1});return m}
+function bars(m){const mx=Math.max(1,...Object.values(m));return`<div class="bars">${Object.entries(m).map(([k,v])=>`<div><span style="min-width:110px">${esc(k)}</span><i style="width:${v/mx*60+4}%"></i><b>${v}</b></div>`).join("")||`<span class="mut">${t("none")}</span>`}</div>`}
+function stats(){return`<div class="grid">${[[t("k1"),D.students.length],[t("k2"),D.done.length],[t("k3"),D.exams.length],[t("k4"),D.files.length],[t("k5"),D.partnerResources.length]].map(k=>`<div class="card tile gt" style="font-size:30px;cursor:default">${k[1]}<div style="font-size:14px;color:#fff">${k[0]}</div></div>`).join("")}</div>
+<div class="card"><h3>${t("bySch")}</h3>${bars(cnt(D.students,s=>s.sc))}</div><div class="card"><h3>${t("byGr")}</h3>${bars(cnt(D.students,s=>t("grade")+" "+s.g))}</div><div class="card"><h3>${t("bySub")}</h3>${bars(cnt(D.done,d=>sjn(d.s)))}</div>`}
+function csv(){
+  const q=s=>'"'+String(s??"").replace(/"/g,'""')+'"';
+  const d="﻿"+["name,school,grade,section"].concat(D.students.map(s=>[s.n,s.sc,s.g,s.c].map(q).join(","))).join("\n");
+  const url=URL.createObjectURL(new Blob([d],{type:"text/csv;charset=utf-8;"})),a=document.createElement("a");
+  a.href=url;a.download="students.csv";a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+
+/* ===================== المعلم المسؤول: إدارة الشركاء ===================== */
+function leadPartners(){
+  const P=D.partners,R=D.partnerResources.slice().sort((a,b)=>(b.updated||0)-(a.updated||0));
+  return`<div class="card"><h3>🤝 ${L("المعلمون الشركاء","Partner teachers")} <span class="badge">${P.length}</span></h3>${P.map(p=>`<div class="row ${p.active===false?"off":""}"><span><b>${esc(p.n)}</b><div class="mut" style="font-size:12px">${esc(p.school)} · ${esc(p.spec)} · <span dir="ltr">${esc(p.email)}</span></div></span><span><span class="badge">${R.filter(x=>x.partnerId==p.id).length} ${L("مورد","res.")}</span> <button class="btn ${p.active===false?"pri":"red"}" onclick="togglePartner('${esc(p.id)}')">${p.active===false?L("تفعيل","Activate"):L("إيقاف","Suspend")}</button></span></div>`).join("")||`<div class="mut">${t("none")}</div>`}</div>
+<div class="card"><h3>📚 ${L("مشاركات الشركاء","Partner resources")} <span class="badge">${R.length}</span></h3>${R.map(x=>`<div class="row ${x.active===false?"off":""}"><span><b>${esc(x.ti)}</b> <a href="${safe(x.u)}" target="_blank" rel="noopener">🔗</a><div class="mut" style="font-size:12px">${esc(pType(x.type))} · ${sjn(x.s)} · ${t("grade")} ${esc(x.g)} · ${L("ف","T")}${esc(x.m)} · ${esc(x.partnerName||"")}</div></span><span><button class="btn" onclick="toggleRes('${esc(x.id)}')">${x.active===false?"👁️ "+L("إظهار","Show"):"🙈 "+L("إخفاء","Hide")}</button> <button class="btn red" onclick="ask('r${esc(x.id)}',()=>store.rm('partnerResources','${esc(x.id)}'))">${V.cf=="r"+x.id?L("تأكيد؟","Sure?"):"🗑"}</button></span></div>`).join("")||`<div class="mut">${t("none")}</div>`}</div>`}
+function togglePartner(id){const p=D.partners.find(x=>x.id==id);if(!p)return;store.put("partners",id,{...p,active:p.active===false});log("partner-toggle","l",p.n)}
+function toggleRes(id){const x=D.partnerResources.find(y=>y.id==id);if(!x)return;store.put("partnerResources",id,{...x,active:x.active===false})}
+
+/* ============================ المعلم الشريك ============================ */
+VIEWS.pgate=function(){return hdr("go({view:'home'})")+`<h2 class="gt" style="text-align:center">🤝 ${t("g5")}</h2><div class="mut" style="text-align:center">${L("شارك ملفات المراجعة وأوراق العمل والاختبارات مع طلاب المنصة","Share revision files, worksheets and tests with the platform's students")}</div>
+<div class="grid" style="margin-top:12px"><div class="card"><h3>🔑 ${L("لديّ كود دخول","I have an access code")}</h3><label>${L("كود الدخول","Access code")}</label><input id="pcode" dir="ltr" placeholder="PT-XXXXXX-XXXXXX" autocomplete="off" onkeydown="if(event.key=='Enter')pLogin()" style="text-transform:uppercase">${V.perr1?`<div class="err">${esc(V.perr1)}</div>`:""}<button class="btn pri" id="plb" style="width:100%;margin-top:12px" onclick="pLogin()">${t("enter")}</button></div>
+<div class="card"><h3>📝 ${L("تسجيل معلم شريك جديد","New partner registration")}</h3><label>${L("الاسم الرباعي","Full four-part name")}</label><input id="pn" maxlength="80"><label>${L("البريد الإلكتروني الوزاري","Ministry email")}</label><input id="pe" type="email" dir="ltr" maxlength="120"><label>${L("المدرسة","School")}</label><input id="ps" maxlength="120"><label>${L("التخصص","Specialization")}</label><input id="psp" maxlength="100">${V.perr2?`<div class="err">${esc(V.perr2)}</div>`:""}<button class="btn gold" id="prb" style="width:100%;margin-top:12px" onclick="pRegister()">${L("تسجيل والحصول على الكود","Register & get my code")}</button></div></div>`};
+function busy(id){const b=$(id);if(b){b.disabled=true;b.innerHTML=`<span class="load"></span>`}}
+function pSet(r){V.token=r.token;V.role="p";V.partner=r.partner;Object.keys(r.data||{}).forEach(c=>setRows(c,r.data[c]));V.pf.g=V.pf.g||grades()[0]||""}
+async function pLogin(){const code=$("pcode").value.trim().toUpperCase();if(!code)return;busy("plb");
+  try{const r=await callServer("apiPartnerLogin",code);if(!r||!r.ok)return go({view:"pgate",perr1:L("كود الدخول غير صحيح أو الحساب موقوف.","Invalid code or account suspended."),perr2:""});pSet(r);V.pcode=null;go({view:"ppanel",perr1:"",perr2:""})}
+  catch(e){go({view:"pgate",perr1:errMsg(e)||L("تعذر الاتصال.","Connection failed."),perr2:""})}}
+async function pRegister(){const d={n:$("pn").value,email:$("pe").value,school:$("ps").value,spec:$("psp").value,lang:V.lang};
+  if(String(d.n).trim().split(/\s+/).length<4)return go({view:"pgate",perr2:L("يرجى إدخال الاسم الرباعي كاملاً.","Please enter your full four-part name."),perr1:""});
+  busy("prb");
+  try{const r=await callServer("apiPartnerRegister",d);pSet(r);V.pcode=r.code;go({view:"ppanel",perr1:"",perr2:""})}
+  catch(e){go({view:"pgate",perr2:errMsg(e),perr1:""})}}
+function copyPartnerCode(){const c=V.pcode||"";(navigator.clipboard?navigator.clipboard.writeText(c):Promise.reject()).then(()=>toast("✔ "+L("تم نسخ الكود","Code copied"))).catch(()=>{prompt("",c)})}
+VIEWS.ppanel=function(){if(V.role!="p"||!V.partner)return VIEWS.pgate();const p=V.partner,f=V.pf,mine=D.partnerResources.slice().sort((a,b)=>(b.updated||0)-(a.updated||0)),ed=V.ped?mine.find(x=>x.id==V.ped):null,src=ed||f;
+return hdr("go({view:'home'})")+`<h2 class="gt">🤝 ${esc(p.n)}</h2><div class="mut">${esc(p.school)} · ${esc(p.spec)}</div>
+${V.pcode?`<div class="card" style="text-align:center;border-color:var(--gold)"><h3>🎉 ${L("تم التسجيل بنجاح! احتفظ بكود الدخول","Registered! Keep your access code")}</h3><div class="code">${esc(V.pcode)}</div><div style="margin-top:10px"><button class="btn gold" onclick="copyPartnerCode()">📋 ${L("نسخ الكود","Copy code")}</button></div><div class="mut" style="font-size:13px;margin-top:8px">${L("ستحتاج هذا الكود في كل مرة تدخل فيها. لا يمكن استرجاعه لاحقاً.","You will need this code every time you sign in. It cannot be recovered later.")}</div></div>`:""}
+<div class="card"><h3>${ed?"✏️ "+L("تعديل المشاركة","Edit resource"):"➕ "+L("إضافة مشاركة جديدة","Add a new resource")}</h3>
+<label>${t("ttl")}</label><input id="rti" maxlength="160" value="${esc(ed?ed.ti:"")}"><label>${t("url")}</label><input id="ru" dir="ltr" value="${esc(ed?ed.u:"")}" placeholder="https:\/\/drive.google.com/...">
+<div class="grid"><div><label>${L("نوع المشاركة","Type")}</label><select id="rty">${PTYPES.map(x=>`<option value="${x[0]}" ${x[0]==src.type?"selected":""}>${ar()?x[1]:x[2]}</option>`).join("")}</select></div>
+<div><label>${t("pickT")}</label><select id="rs2">${SUBJ.map(s=>`<option value="${s[0]}" ${s[0]==src.s?"selected":""}>${ar()?s[1]:s[2]}</option>`).join("")}</select></div>
+<div><label>${t("grade")}</label><select id="rg2">${grades().map(g=>`<option ${String(g)==String(src.g)?"selected":""}>${esc(g)}</option>`).join("")}</select></div>
+<div><label>${ar()?"الفصل":"Term"}</label><select id="rm2">${SEM.map(s=>`<option value="${s[0]}" ${s[0]==String(src.m)?"selected":""}>${ar()?s[1]:s[2]}</option>`).join("")}</select></div></div>
+${V.err?`<div class="err">${esc(V.err)}</div>`:""}<div style="margin-top:12px;display:flex;gap:8px"><button class="btn pri" id="rsb" onclick="savePartnerResource()">${ed?t("save"):t("add")}</button>${ed?`<button class="btn" onclick="go({ped:null})">✕</button>`:""}</div></div>
+<div class="card"><h3>📚 ${L("مشاركاتي","My resources")} <span class="badge">${mine.length}</span></h3>${mine.map(x=>`<div class="row ${x.active===false?"off":""}"><span><b>${esc(x.ti)}</b> <a href="${safe(x.u)}" target="_blank" rel="noopener">🔗</a>${x.active===false?`<span class="badge">${L("مخفي من المسؤول","Hidden by admin")}</span>`:""}<div class="mut" style="font-size:12px">${esc(pType(x.type))} · ${sjn(x.s)} · ${t("grade")} ${esc(x.g)} · ${(SEM.find(s=>s[0]==String(x.m))||SEM[0])[ar()?1:2]}</div></span><span><button class="btn" onclick="go({ped:'${esc(x.id)}'})">✏️</button> <button class="btn red" onclick="ask('pr${esc(x.id)}',()=>deletePartnerResource('${esc(x.id)}'))">${V.cf=="pr"+x.id?L("تأكيد؟","Sure?"):"🗑"}</button></span></div>`).join("")||`<div class="mut">${t("none")}</div>`}</div>`};
+async function savePartnerResource(){
+  const rec={ti:$("rti").value.trim(),u:$("ru").value.trim(),type:$("rty").value,s:$("rs2").value,g:$("rg2").value,m:$("rm2").value,lang:V.lang};
+  V.pf={type:rec.type,s:rec.s,g:rec.g,m:rec.m};
+  if(!rec.ti)return go({err:L("يرجى إدخال عنوان صحيح للمورد.","Please enter a valid resource title.")});
+  if(!/^https:\/\/\S+$/i.test(rec.u))return go({err:L("يرجى إدخال رابط صحيح يبدأ بـ https:\/\/.","Please enter a valid link beginning with https:\/\/.")});
+  const id=V.ped||uid();busy("rsb");
+  try{const r=await callServer("apiPut","partnerResources",id,rec,V.token);if(r&&r.rows)setRows("partnerResources",r.rows);toast("✔ "+L("تم الحفظ","Saved"));go({ped:null,err:""})}
+  catch(e){go({err:errMsg(e)})}
+}
+function deletePartnerResource(id){store.rm("partnerResources",id)}
+
+if(document.readyState!="loading"){init();requestAnimationFrame(()=>setTimeout(sparks,600))}else document.addEventListener("DOMContentLoaded",()=>{init();setTimeout(sparks,600)});
+if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js',{scope:'.\/'}).catch(()=>{}));
+</script></body></html>
